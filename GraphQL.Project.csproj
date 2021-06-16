@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <Folder Include="GraphQL\Mutations\" />
-    <Folder Include="GraphQL\Schemas\" />
   </ItemGroup>
 
 </Project>
