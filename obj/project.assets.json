@@ -1380,9 +1380,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\GraphQL\\GraphQL-Project.csproj",
-      "projectName": "GraphQL-Project",
-      "projectPath": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\GraphQL\\GraphQL-Project.csproj",
+      "projectUniqueName": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\GraphQL\\GraphQL.Project.csproj",
+      "projectName": "GraphQL.Project",
+      "projectPath": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\GraphQL\\GraphQL.Project.csproj",
       "packagesPath": "C:\\Users\\GregoriBrunoFelicio\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\GraphQL\\obj\\",
       "projectStyle": "PackageReference",

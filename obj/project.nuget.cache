@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CsDNlzjqidleP4KEszJe3uQyd01pl95NGMG0ZCc4hVRXcoNUPqDEzAUs8s7BMaEJ6jhK1OzsnNfKjP+rn12CTw==",
+  "dgSpecHash": "F9TftUzln056HsFjPlK25mwvSTlX6Bj91Dq+GTXxKXQraZagx+X+mi+LWfb3K7b4PoeAInCYrhUKIlI22K2lGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\GraphQL\\GraphQL-Project.csproj",
+  "projectFilePath": "C:\\Users\\GregoriBrunoFelicio\\Desktop\\Repositories\\GraphQL\\GraphQL.Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GregoriBrunoFelicio\\.nuget\\packages\\graphiql\\2.0.0\\graphiql.2.0.0.nupkg.sha512",
     "C:\\Users\\GregoriBrunoFelicio\\.nuget\\packages\\graphql\\4.1.0\\graphql.4.1.0.nupkg.sha512",

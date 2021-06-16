@@ -14,7 +14,6 @@
     <Folder Include="GraphQL\Mutations\" />
     <Folder Include="GraphQL\Queries\" />
     <Folder Include="GraphQL\Schemas\" />
-    <Folder Include="GraphQL\Types\" />
   </ItemGroup>
 
 </Project>
