@@ -1,4 +1,5 @@
 using GraphiQl;
+using GraphQL.Project.GraphQL.Mutations;
 using GraphQL.Project.GraphQL.Queries;
 using GraphQL.Project.GraphQL.Schemas;
 using GraphQL.Project.GraphQL.Types;
@@ -26,7 +27,6 @@ namespace GraphQL.Project
 
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -35,6 +35,7 @@ namespace GraphQL.Project
             services.AddTransient<IProductService, ProductService>();
             services.AddSingleton<ProductType>();
             services.AddSingleton<ProductQuery>();
+            services.AddSingleton<ProductMutation>();
             services.AddSingleton<ISchema, ProductSchema>();
 
             services.AddGraphQL(options => options.EnableMetrics = false).AddSystemTextJson();
