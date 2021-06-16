@@ -1,21 +1,21 @@
-﻿using GraphQL.Interfaces;
-using GraphQL.Models;
+﻿using GraphQL.Models;
+using GraphQL.Project.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GraphQL.Services
+namespace GraphQL.Project.Services
 {
-    public class ProductService : IProduct
+    public class ProductService : IProductService
     {
         private static readonly IList<Product> products = new List<Product>
         {
             new Product
             {
-                Id = 0, Name = "Coffe"
+                Id = 0, Name = "Coffe", Price = 2
             },
             new Product
             {
-                Id = 1, Name = "Tea"
+                Id = 1, Name = "Tea", Price = 3
             }
         };
 

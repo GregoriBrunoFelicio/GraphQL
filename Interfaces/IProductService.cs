@@ -1,9 +1,9 @@
 ﻿using GraphQL.Models;
 using System.Collections.Generic;
 
-namespace GraphQL.Interfaces
+namespace GraphQL.Project.Interfaces
 {
-    public interface IProduct
+    public interface IProductService
     {
         IList<Product> GetAllProducts();
         Product GetProductById(int id);

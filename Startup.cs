@@ -1,5 +1,5 @@
-using GraphQL.Interfaces;
-using GraphQL.Services;
+using GraphQL.Project.Interfaces;
+using GraphQL.Project.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace GraphQL
+namespace GraphQL.Project
 {
     public class Startup
     {
@@ -26,7 +26,7 @@ namespace GraphQL
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GraphQL", Version = "v1" });
             });
-            services.AddTransient<IProduct, ProductService>();
+            services.AddTransient<IProductService, ProductService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -1,17 +1,17 @@
-﻿using GraphQL.Interfaces;
-using GraphQL.Models;
+﻿using GraphQL.Models;
+using GraphQL.Project.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GraphQL.Controllers
+namespace GraphQL.Project.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class ProductController : ControllerBase
     {
 
-        private readonly IProduct productService;
+        private readonly IProductService productService;
 
-        public ProductController(IProduct product)
+        public ProductController(IProductService product)
         {
             this.productService = product;
         }
