@@ -4,9 +4,9 @@ using GraphQL.Types;
 
 namespace GraphQL.Project.GraphQL.Queries
 {
-    public class ProductQueries : ObjectGraphType
+    public class ProductQuery : ObjectGraphType
     {
-        public ProductQueries(IProductService productService)
+        public ProductQuery(IProductService productService)
         {
             Field<ListGraphType<ProductType>>("products", resolve: context => productService.GetAllProducts());
 

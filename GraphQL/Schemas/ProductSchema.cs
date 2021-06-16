@@ -5,7 +5,7 @@ namespace GraphQL.Project.GraphQL.Schemas
 {
     public class ProductSchema : Schema
     {
-        public ProductSchema(ProductQueries productQueries)
+        public ProductSchema(ProductQuery productQueries)
         {
 
             Query = productQueries;

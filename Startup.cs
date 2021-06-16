@@ -34,7 +34,7 @@ namespace GraphQL.Project
             });
             services.AddTransient<IProductService, ProductService>();
             services.AddSingleton<ProductType>();
-            services.AddSingleton<ProductQueries>();
+            services.AddSingleton<ProductQuery>();
             services.AddSingleton<ISchema, ProductSchema>();
 
             services.AddGraphQL(options => options.EnableMetrics = false).AddSystemTextJson();
