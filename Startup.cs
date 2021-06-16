@@ -1,5 +1,11 @@
+using GraphiQl;
+using GraphQL.Project.GraphQL.Queries;
+using GraphQL.Project.GraphQL.Schemas;
+using GraphQL.Project.GraphQL.Types;
 using GraphQL.Project.Interfaces;
 using GraphQL.Project.Services;
+using GraphQL.Server;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +33,11 @@ namespace GraphQL.Project
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GraphQL", Version = "v1" });
             });
             services.AddTransient<IProductService, ProductService>();
+            services.AddSingleton<ProductType>();
+            services.AddSingleton<ProductQueries>();
+            services.AddSingleton<ISchema, ProductSchema>();
+
+            services.AddGraphQL(options => options.EnableMetrics = false).AddSystemTextJson();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -38,16 +49,8 @@ namespace GraphQL.Project
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GraphQL v1"));
             }
 
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseGraphiQl("/graphql");
+            app.UseGraphQL<ISchema>();
         }
     }
 }
