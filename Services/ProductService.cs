@@ -1,23 +1,18 @@
 ﻿using GraphQL.Models;
+using GraphQL.Project.Data;
 using GraphQL.Project.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace GraphQL.Project.Services
 {
     public class ProductService : IProductService
     {
-        private static readonly IList<Product> products = new List<Product>
+        private readonly GraphQlDbContext _graphQlDbContext;
+
+        public ProductService(GraphQlDbContext graphQlDbContext)
         {
-            new Product
-            {
-                Id = 0, Name = "Coffe", Price = 2
-            },
-            new Product
-            {
-                Id = 1, Name = "Tea", Price = 3
-            }
-        };
+            _graphQlDbContext = graphQlDbContext;
+        }
 
         public IList<Product> GetAllProducts() => products;
 
