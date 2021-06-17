@@ -35,17 +35,17 @@ namespace GraphQL.Project
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GraphQL", Version = "v1" });
             });
             services.AddTransient<IProductService, ProductService>();
-            services.AddSingleton<ProductType>();
-            services.AddSingleton<ProductQuery>();
-            services.AddSingleton<ProductMutation>();
-            services.AddSingleton<ISchema, ProductSchema>();
+            services.AddTransient<ProductType>();
+            services.AddTransient<ProductQuery>();
+            services.AddTransient<ProductMutation>();
+            services.AddTransient<ISchema, ProductSchema>();
 
             services.AddGraphQL(options => options.EnableMetrics = false).AddSystemTextJson();
 
-            services.AddDbContext<GraphQlDbContext>(options => options.UseSqlServer(@"Data souce= (localdb)\MSSQLLocalDB; Initial Catalog=GraphQlDb; Integrated Security = true"));
+            services.AddDbContext<GraphQlDbContext>(options => options.UseSqlServer(@"Data source= (localdb)\MSSQLLocalDB; Initial Catalog=GraphQlDb; Integrated Security = true"));
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, GraphQlDbContext dbContext)
         {
             if (env.IsDevelopment())
             {
@@ -54,6 +54,7 @@ namespace GraphQL.Project
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GraphQL v1"));
             }
 
+            dbContext.Database.EnsureCreated();
             app.UseGraphiQl("/graphql");
             app.UseGraphQL<ISchema>();
         }
