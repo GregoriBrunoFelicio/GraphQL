@@ -1,4 +1,5 @@
 using GraphiQl;
+using GraphQL.Project.Data;
 using GraphQL.Project.GraphQL.Mutations;
 using GraphQL.Project.GraphQL.Queries;
 using GraphQL.Project.GraphQL.Schemas;
@@ -9,6 +10,7 @@ using GraphQL.Server;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -39,6 +41,8 @@ namespace GraphQL.Project
             services.AddSingleton<ISchema, ProductSchema>();
 
             services.AddGraphQL(options => options.EnableMetrics = false).AddSystemTextJson();
+
+            services.AddDbContext<GraphQlDbContext>(options => options.UseSqlServer(@"Data souce= (localdb)\MSSQLLocalDB; Initial Catalog=GraphQlDb; Integrated Security = true"));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
