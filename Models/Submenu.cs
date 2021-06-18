@@ -1,6 +1,6 @@
 ﻿namespace GraphQL.Project.Models
 {
-    public class Submenu
+    public class SubMenu
     {
         public int Id { get; set; }
         public string Name { get; set; }
