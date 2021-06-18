@@ -1,4 +1,5 @@
 ﻿using GraphQL.Models;
+using GraphQL.Project.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GraphQL.Project.Data
@@ -10,5 +11,9 @@ namespace GraphQL.Project.Data
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<SubMenu> SubMenus { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+
     }
 }

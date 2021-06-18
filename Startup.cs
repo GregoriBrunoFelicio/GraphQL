@@ -42,7 +42,7 @@ namespace GraphQL.Project
 
             services.AddGraphQL(options => options.EnableMetrics = false).AddSystemTextJson();
 
-            services.AddDbContext<GraphQlDbContext>(options => options.UseSqlServer(@"Data source= (localdb)\MSSQLLocalDB; Initial Catalog=GraphQlDb; Integrated Security = true"));
+            services.AddDbContext<GraphQlDbContext>(options => options.UseSqlServer(@"Data source= (localdb)\MSSQLLocalDB; Initial Catalog=CoffeShopDb; Integrated Security = true"));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, GraphQlDbContext dbContext)
