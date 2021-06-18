@@ -34,10 +34,16 @@ namespace GraphQL.Project
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GraphQL", Version = "v1" });
             });
+
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ProductType>();
             services.AddTransient<ProductQuery>();
             services.AddTransient<ProductMutation>();
+
+            services.AddTransient<IMenuService, MenuServices>();
+            services.AddTransient<ISubmenuService, SubMenuService>();
+            services.AddTransient<IReservationService, ReservationService>();
+
             services.AddTransient<ISchema, ProductSchema>();
 
             services.AddGraphQL(options => options.EnableMetrics = false).AddSystemTextJson();
