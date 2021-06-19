@@ -39,12 +39,19 @@ namespace GraphQL.Project
             services.AddTransient<ProductType>();
             services.AddTransient<ProductQuery>();
             services.AddTransient<ProductMutation>();
+            services.AddTransient<MenuType>();
+            services.AddTransient<SubMenuType>();
+            services.AddTransient<ReservationType>();
+            services.AddTransient<MenuQuery>();
+            services.AddTransient<SubMenuQuery>();
+            services.AddTransient<ReservationQuery>();
+            services.AddTransient<RootQuery>();
 
             services.AddTransient<IMenuService, MenuServices>();
             services.AddTransient<ISubmenuService, SubMenuService>();
             services.AddTransient<IReservationService, ReservationService>();
 
-            services.AddTransient<ISchema, ProductSchema>();
+            services.AddTransient<ISchema, RootSchema>();
 
             services.AddGraphQL(options => options.EnableMetrics = false).AddSystemTextJson();
 
