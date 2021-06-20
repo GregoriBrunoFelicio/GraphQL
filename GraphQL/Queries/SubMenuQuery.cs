@@ -12,11 +12,12 @@ namespace GraphQL.Project.GraphQL.Queries
         {
             this.submenuService = submenuService;
             GetSubMenus();
+            GetSubMenusByMenuId();
         }
 
         public void GetSubMenus() =>
             Field<ListGraphType<SubMenuType>>(
-                "subMenu",
+                "subMenus",
                 resolve: context => submenuService.GetSubMenus());
 
         public void GetSubMenusByMenuId() =>
