@@ -16,7 +16,7 @@ namespace GraphQL.Project.GraphQL.Mutations
         }
 
         private void CreateReservation() =>
-            Field<ReservationInputType>("createReservation",
+            Field<ReservationType>("createReservation",
                 arguments: new QueryArguments(
                     new QueryArgument<ReservationInputType> { Name = "Reservation" }
                 ), resolve:

@@ -9,7 +9,7 @@ namespace GraphQL.Project.GraphQL.Types
         {
             Field(m => m.Id);
             Field(m => m.Name);
-            Field(m => m.ImgUrl);
+            Field(m => m.ImageUrl);
             Field(m => m.Description);
             Field(m => m.Price);
             Field(m => m.MenuId);

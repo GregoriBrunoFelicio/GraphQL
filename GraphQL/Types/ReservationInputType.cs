@@ -11,7 +11,8 @@ namespace GraphQL.Project.GraphQL.Types
             Field<StringGraphType>("Phone");
             Field<IntGraphType>("TotalPeople");
             Field<StringGraphType>("Date");
-            Field<IntGraphType>("Time");
+            Field<StringGraphType>("Email");
+            Field<StringGraphType>("Time");
         }
     }
 }
