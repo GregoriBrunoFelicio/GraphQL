@@ -50,7 +50,9 @@ namespace GraphQL.Project
             services.AddTransient<MenuMutation>();
             services.AddTransient<SubMenuMutation>();
             services.AddTransient<ReservationMutation>();
-
+            services.AddTransient<MenuInputType>();
+            services.AddTransient<SubMenuInputType>();
+            services.AddTransient<ReservationInputType>();
 
             services.AddTransient<IMenuService, MenuServices>();
             services.AddTransient<ISubmenuService, SubMenuService>();
