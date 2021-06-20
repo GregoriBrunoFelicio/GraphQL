@@ -2,9 +2,9 @@
 
 namespace GraphQL.Project.GraphQL.Types
 {
-    public class SubmenuInputType : InputObjectGraphType
+    public class SubMenuInputType : InputObjectGraphType
     {
-        public SubmenuInputType()
+        public SubMenuInputType()
         {
             Field<IntGraphType>("Id");
             Field<StringGraphType>("Name");
