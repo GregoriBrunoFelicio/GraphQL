@@ -46,6 +46,7 @@ namespace GraphQL.Project
             services.AddTransient<SubMenuQuery>();
             services.AddTransient<ReservationQuery>();
             services.AddTransient<RootQuery>();
+            services.AddTransient<RootMutation>();
 
             services.AddTransient<IMenuService, MenuServices>();
             services.AddTransient<ISubmenuService, SubMenuService>();
